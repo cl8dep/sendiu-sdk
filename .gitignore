@@ -1,0 +1,18 @@
+#Dependencies folders
+node_modules
+
+#Dependencies manifests
+yarn.lock
+package-lock.json
+
+#Build assets
+dist
+
+#Error logs
+yarn*.log
+
+#Environment variables
+.env
+
+#IDEs and Code Editors
+.idea
