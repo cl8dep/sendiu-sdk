@@ -18,8 +18,16 @@ jobs:
         with:
           node-version: 14.x
 
+      - name: Install dependencies
+        run: npm install
+
       - name: Build
         run: npm run build
-        
+
+      - name: Create env variables
+        run: |
+          echo SENDIU_USERNAME=${{ secrets.SENDIU_USERNAME }} >> .env
+          echo SENDIU_PASSWORD=${{ secrets.SENDIU_PASSWORD }} >> .env
+
       - name: Run tests
         run: npm run test

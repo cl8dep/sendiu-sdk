@@ -5,10 +5,13 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
+const username = process.env["SENDIU_USERNAME"] || "";
+const password = process.env["SENDIU_PASSWORD"] || "";
+
 test('Can instantiate', () => {
   const credentials: Credentials = {
-    username: process.env.SENDIU_USERNAME,
-    password: process.env.SENDIU_PASSWORD
+    username: username,
+    password: password
   }
   const senderService = new SenderService(credentials)
   expect(senderService).toBeDefined();
@@ -29,8 +32,8 @@ test('Send request', async () => {
   }
 
   const credentials: Credentials = {
-    username: process.env.SENDIU_USERNAME,
-    password: process.env.SENDIU_PASSWORD
+    username: username,
+    password: password
   }
   const senderService = new SenderService(credentials)
 
